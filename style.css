@@ -1,0 +1,64 @@
+/* styles.css */  
+
+/* Basic Reset */  
+body {  
+    margin: 0;  
+    font-family: Arial, sans-serif; 
+}  
+
+.table-container {  
+    overflow-x: auto; /* Enables horizontal scrolling in small screens */  
+    padding: 20px; 
+    color: rgb(97, 15, 173); 
+}  
+
+/* Table Styles */  
+table {  
+    width: 100%;  
+    border-collapse: collapse;  
+    min-width: 600px; /* Minimum width to help with responsiveness */  
+}  
+
+th, td {  
+    padding: 12px;  
+    text-align: left;  
+    border: 3px solid #cf1515; /* Adding border to table cells */  
+}  
+
+/* Header Styles */  
+th {  
+    background-color: #f4f4f4;  
+}  
+
+/* Responsive Styles */  
+@media screen and (max-width: 600px) {  
+    table {  
+        border: 0;  
+    }  
+    
+    thead {  
+        display: none; /* Hides the table header on small screens */  
+    }  
+    
+    tr {  
+        display: block; /* Display rows as block */  
+        margin-bottom: 10px; /* Space between rows */  
+        border: 1px solid #ddd; /* Adding border to blocks */  
+    }  
+
+    td {  
+        display: flex;  
+        justify-content: space-between; /* Space between label and value */  
+        padding: 10px;  
+        border: none; /* Remove border for responsive design */  
+        position: relative; /* Positioning for pseudo-elements */  
+    }  
+
+    td::before {  
+        content: attr(data-label); /* Use the data-label attribute as label */  
+        position: absolute;  
+        left: 10px; /* To adjust positioning */  
+        color: #999; /* Label color */  
+        font-weight: bold;  
+    }  
+}
